@@ -1,35 +1,47 @@
 import React from "react";
+import "./AboutUs.css";
 
-function AboutUs() {
+function AboutUs({ onGetStarted }) {
   return (
-    <div className="about-us">
-      <h1>About Paradise Nursery</h1>
+    <div className="about-us-container">
 
-      <p>
-        Welcome to <strong>Paradise Nursery</strong>, your trusted destination
-        for beautiful indoor and outdoor plants. Our mission is to bring nature
-        closer to every home by offering healthy, high-quality plants that are
-        easy to care for and suitable for every lifestyle.
-      </p>
+      <div className="about-us-content">
 
-      <p>
-        We carefully select a wide variety of plants, including flowering
-        plants, succulents, air-purifying plants, herbs, and decorative indoor
-        plants. Every product is chosen to ensure freshness, quality, and
-        customer satisfaction.
-      </p>
+        <h1>Welcome to Paradise Nursery</h1>
 
-      <p>
-        At Paradise Nursery, we believe plants create healthier, happier living
-        spaces. Whether you are a beginner or an experienced plant enthusiast,
-        we are committed to helping you find the perfect plants for your home or
-        office.
-      </p>
+        <h2>Your One-Stop Shop for Beautiful House Plants</h2>
 
-      <p>
-        Thank you for choosing Paradise Nursery. We hope our collection inspires
-        you to create your own green paradise.
-      </p>
+        <p>
+          At <strong>Paradise Nursery</strong>, we believe that every home
+          deserves the beauty and freshness of nature. We specialize in offering
+          a carefully selected collection of high-quality indoor and outdoor
+          plants that bring life, color, and clean air into your living space.
+        </p>
+
+        <p>
+          Our mission is to make plant shopping simple, enjoyable, and
+          accessible for everyone. Whether you are a first-time plant owner or
+          an experienced gardening enthusiast, we provide healthy plants,
+          affordable prices, and excellent customer service to help you build
+          your own green paradise.
+        </p>
+
+        <p>
+          Browse our wide selection of flowering plants, succulents, tropical
+          plants, herbs, and decorative houseplants. Every plant is chosen with
+          care to ensure freshness and long-lasting quality. Thank you for
+          choosing Paradise Nursery as your trusted plant store.
+        </p>
+
+        <button
+          className="get-started-button"
+          onClick={onGetStarted}
+        >
+          Get Started
+        </button>
+
+      </div>
+
     </div>
   );
 }
