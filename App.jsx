@@ -1,80 +1,30 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-
+import React, { useState } from "react";
 import "./App.css";
+
 import AboutUs from "./components/AboutUs";
 import ProductList from "./components/ProductList";
-import Cart from "./components/Cart";
-
-/* Landing Page */
-
-function LandingPage() {
-
-  const navigate = useNavigate();
-
-  const handleGetStarted = () => {
-    navigate("/products");
-  };
-
-  return (
-
-    <div className="landing-page">
-
-      <div className="overlay">
-
-        <div className="welcome-content">
-
-          <h1>Paradise Nursery</h1>
-
-          <h2>Bring Nature Into Your Home</h2>
-
-          <p>
-            Paradise Nursery offers a beautiful collection of indoor and
-            outdoor plants to brighten your home, office, and garden.
-            Discover healthy plants, exceptional quality, and outstanding
-            customer service all in one place.
-          </p>
-
-          <button
-            className="get-started-btn"
-            onClick={handleGetStarted}
-          >
-            Get Started
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  );
-
-}
-
-/* Main Application */
 
 function App() {
 
-  return (
+    const [showProductList, setShowProductList] = useState(false);
 
-    <Router>
+    const handleGetStarted = () => {
+        setShowProductList(true);
+    };
 
-      <Routes>
+    if (showProductList) {
+        return <ProductList />;
+    }
 
-        <Route path="/" element={<LandingPage />} />
+    return (
 
-        <Route path="/about" element={<AboutUs />} />
+        <div className="app">
 
-        <Route path="/products" element={<ProductList />} />
+            <AboutUs onGetStarted={handleGetStarted} />
 
-        <Route path="/cart" element={<Cart />} />
+        </div>
 
-      </Routes>
-
-    </Router>
-
-  );
+    );
 
 }
 
